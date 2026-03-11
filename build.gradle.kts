@@ -16,6 +16,7 @@ kotlin {
 
 dependencies {
     implementation("io.github.flaxoos:ktor-server-kafka:2.2.1")
+    implementation("io.ktor:ktor-server-websockets")
     implementation("io.ktor:ktor-server-core")
     implementation("io.ktor:ktor-server-netty")
     implementation("ch.qos.logback:logback-classic:1.5.6")
