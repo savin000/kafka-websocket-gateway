@@ -1,4 +1,6 @@
 val ktorVersion: String by project
+val kafkaVersion: String by project
+val coroutinesVersion: String by project
 val logbackVersion: String by project
 
 plugins {
@@ -24,6 +26,8 @@ dependencies {
     implementation("io.ktor:ktor-server-core")
     implementation("io.ktor:ktor-server-netty")
     implementation("io.ktor:ktor-server-config-yaml")
+    implementation("org.apache.kafka:kafka-clients:$kafkaVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
 
     testImplementation("io.ktor:ktor-server-test-host")
