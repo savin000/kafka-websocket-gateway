@@ -1,3 +1,6 @@
+val ktorVersion: String by project
+val logbackVersion: String by project
+
 plugins {
     kotlin("jvm") version "2.3.0"
     id("io.ktor.plugin") version "3.4.0"
@@ -15,9 +18,14 @@ kotlin {
 }
 
 dependencies {
-    implementation("io.github.flaxoos:ktor-server-kafka:2.2.1")
+    implementation(platform("io.ktor:ktor-bom:$ktorVersion"))
+
     implementation("io.ktor:ktor-server-websockets")
     implementation("io.ktor:ktor-server-core")
     implementation("io.ktor:ktor-server-netty")
-    implementation("ch.qos.logback:logback-classic:1.5.6")
+    implementation("io.ktor:ktor-server-config-yaml")
+    implementation("ch.qos.logback:logback-classic:$logbackVersion")
+
+    testImplementation("io.ktor:ktor-server-test-host")
+    testImplementation(kotlin("test"))
 }
